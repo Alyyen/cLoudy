@@ -1,0 +1,33 @@
+/* GENERAL */
+* {
+    font-family: 'Nunito', sans-serif;
+}
+
+/* TITLES FONT FAMILY */
+h2 {
+    font-family: 'Leckerli One', cursive;
+}
+
+h3 {
+    font-family: 'Leckerli One', cursive;
+}
+
+h4 {
+    font-family: 'Leckerli One', cursive;
+}
+
+/* BACKGROUND COLOR */
+.background-primary {
+    background-color: #8FC7E7;
+}
+
+.background-secondary {
+    background-color: #1E8BCA;
+}
+
+/* NAVBAR */
+.navbar-logo {
+    height: 50px;
+    width: auto;
+}
+
