@@ -3,9 +3,11 @@
     font-family: 'Nunito', sans-serif;
 }
 
-/* TITLES FONT FAMILY */
+/* TITLES */
 h2 {
-    font-family: 'Leckerli One', cursive;
+    font-weight: bolder;
+    font-size: 24px;
+    margin: 20px auto !important;
 }
 
 h3 {
@@ -16,13 +18,13 @@ h4 {
     font-family: 'Leckerli One', cursive;
 }
 
-/* BACKGROUND COLOR */
-.background-primary {
-    background-color: #8FC7E7;
+/* COLOURS */
+.text-color-dark {
+    color: #1F1F1F !important;
 }
 
-.background-secondary {
-    background-color: #1E8BCA;
+.text-color-light {
+    color: #F1F1F1 !important;
 }
 
 /* NAVBAR */
@@ -31,3 +33,17 @@ h4 {
     width: auto;
 }
 
+/* NEW POST */
+.text-area-post {
+    min-height: 200px;
+    max-height: 450px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.btn-send {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+    margin: 0 auto;
+    float: right;
+}
