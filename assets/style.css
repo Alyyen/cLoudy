@@ -46,3 +46,13 @@ h4 {
     margin: 0 auto;
     float: right;
 }
+
+.new-post-title-class {
+    width: 100%;
+    margin: 10px auto;
+    float: right;
+}
+
+.new-post-title-label {
+    margin: auto 0;
+}

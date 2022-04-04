@@ -56,8 +56,14 @@
     <div class="row">
         <div class="col-12">
             <form method="post">
-                <textarea class="text-area-post"></textarea><br>
-                <button class="btn btn-send btn-outline-primary">Send</button>
+                <label class="new-post-title-label" for="new-post-title-id">Title &nbsp;</label>
+                <input class="new-post-title-class" id="new-post-title-id" placeholder="Add a title (100 caracters max.)" maxlength="100"/>
+                <br>
+                <label class="new-post-content-label" for="new-post-content-id">Content &nbsp;</label>
+                <textarea class="text-area-post" id="new-post-content-id"></textarea>
+                <br>
+                <br>
+                <button class="btn btn-send btn-primary">Send</button>
             </form>
         </div>
     </div>
