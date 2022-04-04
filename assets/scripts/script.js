@@ -23,7 +23,7 @@ $(function () {
             data: getFormData(form),
         });
 
-        
+
         $.ajax({
             url: "../controller/topic.php",
             type: "post",
@@ -36,7 +36,6 @@ $(function () {
                 console.log('===== SUCCESS =====');
             },
             error: function (jqxhr) {
-                console.log('===== ERROR =====');
                 console.log(jqxhr.responseText);
             },
         });

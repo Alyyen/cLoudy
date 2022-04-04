@@ -8,6 +8,12 @@
 			$title = $_POST['data']['new-post-title'];
 			$content = $_POST['data']['new-post-content'];
 			$id_category = $_POST['data']['new-post-category'];
+			// REPLACE " & ' TO \" & \' IN TITLE AND CONTENT
+			$content = str_replace("'", "\'", $content);
+			$content = str_replace('"', '\"', $content);
+			$title = str_replace("'", "\'", $title);
+			$title = str_replace('"', '\"', $title);
+			// SEND DATAS TO DATABASE
 			$new_post = $object->new_post($title, $content, $id_category);
 			break;
 		case 'topic-list':
