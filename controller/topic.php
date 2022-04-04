@@ -4,7 +4,11 @@
 
 	switch($_POST['action']){
 		case 'new-post':
-			echo 'new post';
+			$object = new Database();
+			$title = $_POST['data']['new-post-title'];
+			$content = $_POST['data']['new-post-content'];
+			$id_category = $_POST['data']['new-post-category'];
+			$new_post = $object->new_post($title, $content, $id_category);
 			break;
 		case 'topic-list':
 			echo 'topic list';

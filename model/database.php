@@ -18,10 +18,14 @@
 
 			try {
 				$this->dbHandler = new PDO($conn, $this->dbUser, $this->dbPass, $options);
-				echo ('OK');
 			} catch (PDOException $e) {
 				$this->error = $e->getMessage();
 				echo $this->error;
 			}
+		}
+
+		function new_post($title, $content, $id_category) {
+			$sql = "INSERT INTO topic (title, content, release_date, id_category) VALUES ('$title','$content', CURRENT_TIMESTAMP,'$id_category')";
+			$this->dbHandler->exec($sql);
 		}
 	}
