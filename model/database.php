@@ -31,6 +31,15 @@
 
 		function get_topics_by_idcategory($id_category) {
 			$sql = "SELECT * FROM topic WHERE id_category LIKE '$id_category'";
-			//$this->dbHandler->exec($sql);
+
+			$datas = $this->dbHandler->query($sql);
+			$datas->execute();
+			$result = $datas->fetchAll(PDO::FETCH_ASSOC);
+
+			if (empty($result)) {
+				return NULL;
+			} else {
+				return $result;
+			}
 		}
 	}
