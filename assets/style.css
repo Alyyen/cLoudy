@@ -81,17 +81,14 @@ h4 {
 
 /* HOMEPAGE CAROUSEL */
 .carousel-item {
-    height: 300px;
+    height: 400px;
     width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
 }
 
 .category_carousel_title {
-    padding: 2px 10px;
+    padding: 5px 14px;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 1);
 }
 
 
