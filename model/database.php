@@ -28,4 +28,9 @@
 			$sql = "INSERT INTO topic (title, content, release_date, id_category) VALUES ('$title','$content', CURRENT_TIMESTAMP,'$id_category')";
 			$this->dbHandler->exec($sql);
 		}
+
+		function get_topics_of_specific_category($id_category) {
+			$sql = "SELECT * FROM topic WHERE id_category LIKE '$id_category'";
+			//$this->dbHandler->exec($sql);
+		}
 	}
