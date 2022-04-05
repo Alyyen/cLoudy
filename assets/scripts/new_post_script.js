@@ -11,8 +11,8 @@ function getFormData($form) {
     return indexed_array;
 }
 
-// SEND NEW POST DATAS TO DATABASE
 $(function () {
+// SEND NEW POST DATAS TO DATABASE
     $("#new-post-form").submit(function (event) {
 
         event.preventDefault();
@@ -23,7 +23,6 @@ $(function () {
             data: getFormData(form),
         });
 
-
         $.ajax({
             url: "../controller/topic.php",
             type: "post",
@@ -32,13 +31,9 @@ $(function () {
                 action: "new-post",
                 data: getFormData(form),
             },
-            success: function (result) {
-                console.log('===== SUCCESS =====');
-            },
             error: function (jqxhr) {
                 console.log(jqxhr.responseText);
             },
         });
-        
     });
 });
