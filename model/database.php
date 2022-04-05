@@ -29,7 +29,7 @@
 			$this->dbHandler->exec($sql);
 		}
 
-		function get_topics_of_specific_category($id_category) {
+		function get_topics_by_idcategory($id_category) {
 			$sql = "SELECT * FROM topic WHERE id_category LIKE '$id_category'";
 			//$this->dbHandler->exec($sql);
 		}
