@@ -37,6 +37,17 @@ $(function () {
             data: id_category,
         },
         success: function (result) {
+            // ADD RESULTS NUMBER IN THE CATEGORY HEADER
+            $results_number = Object.keys(result['datas']).length;
+            switch ($results_number){
+                case 1:
+                    $('.category_header').append('<div class="topic_category_results_number"><span>'+ $results_number +'&nbsp;result</span></div><br>');
+                    break;
+                default :
+                    $('.category_header').append('<div class="topic_category_results_number"><span>'+ $results_number +'&nbsp;results</span></div><br>');
+                    break;
+            }
+
             result['datas'].forEach(topic => {
                 // DISPLAY ONLY THE FIRST 100 CHARACTERS OF A TOPIC CONTENT
                 $full_content = topic['content']
@@ -47,6 +58,7 @@ $(function () {
                     $content = $full_content;
                 }
 
+                // ADD TOPICS DATAS TO CARDS
                 $('#category_list_div').append('<div class="card col-xs-12 col-sm-6 col-md-4 col-xl-3 card-topic">\n' +
                     '  <div class="card-body">\n' +
                     '    <h5 class="card-title">' + topic['title'] + '</h5>\n' +
@@ -57,6 +69,7 @@ $(function () {
             })
         },
         error: function (jqxhr) {
+            // IF NO RESULTS ARE FOUND
             $('.container').append('<div class="topic_category"><h4>Oops... There is no topic in this category yet...</h4><br><a href="../view/index.html">Back to home</a></div>');
         },
     })
