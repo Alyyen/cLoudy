@@ -16,9 +16,6 @@
 			// SEND DATAS TO DATABASE
 			$new_post = $object->new_post($title, $content, $id_category);
 			break;
-		case 'topic-list':
-			echo 'topic list';
-			break;
 		case 'topic-details':
 			echo 'topic details';
 			break;
