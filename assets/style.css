@@ -62,3 +62,10 @@ h4 {
     border: none;
     border-radius: 10px;
 }
+
+/* CATEGORY LIST */
+.category_banner {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+}
