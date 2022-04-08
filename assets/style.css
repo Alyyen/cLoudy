@@ -88,9 +88,15 @@ h4 {
 }
 
 /* HOMEPAGE CAROUSEL */
+
+.carousel-inner img {
+    width: 100%;
+}
+
 .carousel-item {
     height: 400px;
-    width: 100%;
+    min-width: 100% !important;
+    width: 100% !important;
 }
 
 .category_carousel_title {
@@ -110,3 +116,5 @@ h4 {
     text-align: center;
     color: #5e5e5e;
 }
+
+
