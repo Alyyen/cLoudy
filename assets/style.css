@@ -75,8 +75,16 @@ h4 {
 }
 
 .card-topic {
-    max-width: 300px;
-    max-height: 400px;
+    margin-bottom: 10px;
+    max-width: 550px;
+    max-height: 300px;
+}
+
+@media (max-width: 570px) {
+    .card-topic {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
 }
 
 /* HOMEPAGE CAROUSEL */
