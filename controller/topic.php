@@ -19,6 +19,19 @@
 		case 'topic-details':
 			echo 'topic details';
 			break;
+		case 'last-four-posts':
+			$object = new Database();
+
+			// GET DATAS FROM DATABASE
+			$list_last_topics = $object->last_posts_for_homepage();
+
+			// RETURN DATAS AS JSON
+			if ($list_last_topics != NULL) {
+				echo json_encode(array("status" => 'Success', "datas" => $list_last_topics));
+			} else {
+				die(json_encode(array("status" => 'error')));
+			}
+			break;
 		default:
 			break;
 	}
