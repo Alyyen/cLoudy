@@ -64,6 +64,7 @@ h4 {
 }
 
 /* CATEGORY LIST */
+
 .container {
     margin: 0 auto;
 }
@@ -87,6 +88,11 @@ h4 {
     }
 }
 
+.card-category {
+    font-weight: 600;
+    color: #8F8F8F;
+}
+
 /* HOMEPAGE CAROUSEL */
 
 .carousel-inner img {
@@ -106,15 +112,11 @@ h4 {
 }
 
 /* FOOTER */
-.footer-icon {
-    width: 50px !important;
-    height: 50px !important;
-}
 
 .footer-copyright {
     margin: 30px auto;
     text-align: center;
-    color: #5e5e5e;
+    color: #5E5E5E;
 }
 
 
