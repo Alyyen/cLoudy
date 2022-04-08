@@ -24,13 +24,30 @@
 			}
 		}
 
+		// ADD A POST
 		function new_post($title, $content, $id_category) {
 			$sql = "INSERT INTO topic (title, content, release_date, id_category) VALUES ('$title','$content', CURRENT_TIMESTAMP,'$id_category')";
 			$this->dbHandler->exec($sql);
 		}
 
+		// GET POSTS BY CATEGORY
 		function get_topics_by_idcategory($id_category) {
 			$sql = "SELECT * FROM topic WHERE id_category LIKE '$id_category'";
+
+			$datas = $this->dbHandler->query($sql);
+			$datas->execute();
+			$result = $datas->fetchAll(PDO::FETCH_ASSOC);
+
+			if (empty($result)) {
+				return NULL;
+			} else {
+				return $result;
+			}
+		}
+
+		// GET LAST POSTS FOR HOMEPAGE
+		function last_posts_for_homepage(){
+			$sql = "SELECT * FROM topic JOIN category ON topic.id_category = category.id ORDER BY release_date DESC LIMIT 4";
 
 			$datas = $this->dbHandler->query($sql);
 			$datas->execute();
