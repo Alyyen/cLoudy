@@ -77,7 +77,7 @@
 
 		// GET COMMENTS LINKED TO A TOPIC WITH ID TOPIC
 		function get_comments_by_idtopic($id_topic) {
-			$sql = "SELECT * FROM comment JOIN topic ON comment.id_topic = topic.id WHERE topic.id = '$id_topic'";
+			$sql = "SELECT * FROM comment WHERE id_topic = '$id_topic' ORDER BY release_date DESC";
 
 			$datas = $this->dbHandler->query($sql);
 			$datas->execute();
@@ -88,5 +88,11 @@
 			} else {
 				return $result;
 			}
+		}
+
+		// GET COMMENTS LINKED TO A TOPIC WITH ID TOPIC
+		function new_comment_on_topic_by_id($id_topic, $content) {
+			$sql = "INSERT INTO comment (id_topic, content, release_date) VALUES ('$id_topic','$content', CURRENT_TIMESTAMP)";
+			$this->dbHandler->exec($sql);
 		}
 	}
