@@ -3,6 +3,10 @@
     font-family: 'Nunito', sans-serif;
 }
 
+body {
+    margin-bottom: 100px;
+}
+
 /* TITLES */
 h2 {
     font-weight: bolder;
@@ -112,7 +116,7 @@ h4 {
 /* FOOTER */
 footer {
     width: 100%;
-    position: fixed;
+    position: relative;
     bottom: 0;
 }
 
