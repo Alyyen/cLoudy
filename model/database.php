@@ -74,4 +74,18 @@
 				return $result;
 			}
 		}
+
+		function get_comments_by_idtopic($id_topic) {
+			$sql = "SELECT * FROM comment JOIN topic ON comment.id_topic = topic.id WHERE topic.id = '$id_topic'";
+
+			$datas = $this->dbHandler->query($sql);
+			$datas->execute();
+			$result = $datas->fetchAll(PDO::FETCH_ASSOC);
+
+			if (empty($result)) {
+				return NULL;
+			} else {
+				return $result;
+			}
+		}
 	}
