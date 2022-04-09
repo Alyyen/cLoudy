@@ -46,6 +46,22 @@
 				die(json_encode(array("status" => 'error')));
 			}
 			break;
+		case 'topic-comments':
+			$object = new Database();
+			$if_topic = $_POST['data'];
+
+			// GET COMMENTS BY ID TOPIC
+			$topic_comments = $object->get_comments_by_idtopic($id_topic);
+
+			// RETURN DATAS AS JSON
+			if ($topic_comments != NULL) {
+				echo json_encode(array("status" => 'Success', "datas" => $topic_comments));
+			} else {
+				header("HTTP/1.0 404 Not Found");
+				die(json_encode(array("status" => 'error')));
+			}
+
+			break;
 		default:
 			break;
 	}
