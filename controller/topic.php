@@ -48,7 +48,7 @@
 			break;
 		case 'topic-comments':
 			$object = new Database();
-			$if_topic = $_POST['data'];
+			$id_topic = $_POST['data'];
 
 			// GET COMMENTS BY ID TOPIC
 			$topic_comments = $object->get_comments_by_idtopic($id_topic);
