@@ -2,7 +2,7 @@
 	require_once('../model/database.php');
 	require_once('../model/configuration.php');
 
-	switch($_POST['action']){
+	switch ($_POST['action']) {
 		case 'new-post':
 			$object = new Database();
 			$title = $_POST['data']['new-post-title'];
@@ -60,7 +60,18 @@
 				header("HTTP/1.0 404 Not Found");
 				die(json_encode(array("status" => 'error')));
 			}
+			break;
+		case 'topic-new-comment':
+			$object = new Database();
+			$id_topic = $_POST['id_topic'];
+			$content = $_POST['data']['new-comment-content'];
 
+			// REPLACE " & ' TO \" & \' IN TITLE AND CONTENT
+			$content = str_replace("'", "\'", $content);
+			$content = str_replace('"', '\"', $content);
+
+			// SEND DATAS TO DATABASE
+			$new_comment = $object->new_comment_on_topic_by_id($id_topic, $content);
 			break;
 		default:
 			break;
