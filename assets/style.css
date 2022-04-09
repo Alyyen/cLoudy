@@ -110,6 +110,12 @@ h4 {
 }
 
 /* FOOTER */
+footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
 .footer-copyright {
     margin: 30px auto;
     text-align: center;
