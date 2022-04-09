@@ -75,6 +75,7 @@
 			}
 		}
 
+		// GET COMMENTS LINKED TO A TOPIC WITH ID TOPIC
 		function get_comments_by_idtopic($id_topic) {
 			$sql = "SELECT * FROM comment JOIN topic ON comment.id_topic = topic.id WHERE topic.id = '$id_topic'";
 
