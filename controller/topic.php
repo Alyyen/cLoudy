@@ -18,9 +18,6 @@
 			// SEND DATAS TO DATABASE
 			$new_post = $object->new_post($title, $content, $id_category);
 			break;
-		case 'topic-details':
-			echo 'topic details';
-			break;
 		case 'last-four-posts':
 			$object = new Database();
 
@@ -31,6 +28,21 @@
 			if ($list_last_topics != NULL) {
 				echo json_encode(array("status" => 'Success', "datas" => $list_last_topics));
 			} else {
+				die(json_encode(array("status" => 'error')));
+			}
+			break;
+		case 'topic-details':
+			$object = new Database();
+			$id_topic = $_POST['data'];
+
+			// GET DATAS FROM DATABASE
+			$topic_details = $object->get_topic_details_by_idtopic($id_topic);
+
+			// RETURN DATAS AS JSON
+			if ($topic_details != NULL) {
+				echo json_encode(array("status" => 'Success', "datas" => $topic_details));
+			} else {
+				header("HTTP/1.0 404 Not Found");
 				die(json_encode(array("status" => 'error')));
 			}
 			break;
