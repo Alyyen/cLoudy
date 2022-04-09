@@ -66,10 +66,11 @@
         <div class="col" id="post-comment">
             <hr>
             <h4>Post a comment</h4>
-            <form>
+            <form method="post" id="new-comment-form">
                 <input class="w-100" type="text" placeholder="Type your comment"/>
                 </br>
-                <button class="btn float-right btn-primary" type="submit">Send</button>
+                <button class="btn btn-send float-right btn-primary"><i class="fa-solid fa-paper-plane"></i>&nbsp;Send</button>
+                <button class="btn btn-send float-right btn-outline-danger"><i class="fa-solid fa-ban"></i>&nbsp;Reset</button>
             </form>
         </div>
         <div class="col-1 d-none d-md-block"></div>
@@ -98,6 +99,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+<!-- FONT AWESOME -->
+<script src="https://kit.fontawesome.com/4fabc986ab.js" crossorigin="anonymous"></script>
 <!-- SCRIPTS -->
 <script src="../assets/scripts/topic_details.js"></script>
 </body>
