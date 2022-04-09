@@ -66,4 +66,46 @@ $(function () {
                 '    </div>');
         },
     })
+
+    // ---------------------------------------------------------------------------------------------------------------------
+    // GET AS JSON FILE THE DATAS
+    function getFormData($form) {
+        let unindexed_array = $form.serializeArray();
+        let indexed_array = {};
+
+        $.map(unindexed_array, function (n, i) {
+            indexed_array[n['name']] = n['value'];
+        });
+
+        return indexed_array;
+    }
+
+    // SEND NEW COMMENT DATAS TO DATABASE
+    $("#new-comment-form").submit(function (event) {
+
+        event.preventDefault();
+        let form = $(this);
+
+        // POST A COMMENT
+        $.ajax({
+            type: 'post',
+            url: "../controller/topic.php",
+            dataType: 'json',
+            data: {
+                action: 'topic-new-comment',
+                id_topic: id_topic,
+                data: getFormData(form)
+            },
+            success: function (result) {
+                console.log(result);
+            },
+            error: function (jqxhr) {
+                // IF COMMENT CANNOT BE SENT
+                console.log(jqxhr.responseText);
+                $('.container').append('<div>' +
+                    '<h5>The comment can\'t be send for the moment, please refresh webpage or try later.</h5>' +
+                    '<br><a href="#">Refresh webpage</a></div>');
+            },
+        })
+    });
 });
