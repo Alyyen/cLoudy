@@ -20,14 +20,14 @@ $(function () {
                 }
 
                 // ADD TOPICS DATAS TO CARDS
-                $('#home-last-posts-selection').append('<div class="card col-xs-12 col-sm-6 col-md-4 col-xl-3 card-topic gy-5">\n' +
+                $('#home-last-posts-selection').append('<div class="padding10 col-xs-12 col-sm-6 col-md-4 col-xl-3"><div class="card card-topic">\n' +
                     '  <div class="card-body">\n' +
                     '    <h5 class="card-title">' + topic['title'] + '</h5>\n' +
                     '    <span class="card-category">' + topic['name'].toUpperCase() + '</span></br>\n' +
                     '    <span class="card-release_date">' + topic['release_date'] + '</span>\n' +
                     '    <p class="card-text">' + $content + '</p>\n' +
                     '    <a href="topic_details.html?id=' + topic['id'] + '" class="btn btn-primary">Read more</a>\n' +
-                    '  </div>\n');
+                    '  </div></div>');
             })
         },
         error: function (jqxhr) {
