@@ -1,5 +1,4 @@
 // GET AS JSON FILE THE DATAS
-
 function getFormData($form) {
     let unindexed_array = $form.serializeArray();
     let indexed_array = {};
@@ -12,16 +11,11 @@ function getFormData($form) {
 }
 
 $(function () {
-// SEND NEW POST DATAS TO DATABASE
+    // SEND NEW POST DATAS TO DATABASE
     $("#new-post-form").submit(function (event) {
 
         event.preventDefault();
         let form = $(this);
-
-        console.log({
-            action: "new-post",
-            data: getFormData(form),
-        });
 
         $.ajax({
             url: "../controller/topic.php",
