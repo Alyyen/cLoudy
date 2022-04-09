@@ -51,8 +51,37 @@
 
 <!-- CONTENT -->
 <div class="container">
-    <div class="topic_header"></div>
-    <div class="row row-cols-auto" id="topic_content_div"></div>
+    <div class="row row-cols-auto">
+        <div class="col-1 d-none d-md-block"></div>
+        <div class="col" id="topic_header"></div>
+        <div class="col-1 d-none d-md-block"></div>
+    </div>
+    <div class="row row-cols-auto">
+        <div class="col-1 d-none d-md-block"></div>
+        <div class="col" id="topic_content_div"></div>
+        <div class="col-1 d-none d-md-block"></div>
+    </div>
+    <div class="row row-cols-auto">
+        <div class="col-1 d-none d-md-block"></div>
+        <div class="col" id="post-comment">
+            <hr>
+            <h4>Post a comment</h4>
+            <form>
+                <input class="w-100" type="text" placeholder="Type your comment"/>
+                </br>
+                <button class="btn float-right btn-primary" type="submit">Send</button>
+            </form>
+        </div>
+        <div class="col-1 d-none d-md-block"></div>
+    </div>
+    <div class="row row-cols-auto">
+        <div class="col-1 d-none d-md-block"></div>
+        <div class="col margin-bottom" id="list-comment">
+            <hr>
+            <h4>All comments</h4>
+        </div>
+        <div class="col-1 d-none d-md-block"></div>
+    </div>
 </div>
 
 <div class="container-fluid">

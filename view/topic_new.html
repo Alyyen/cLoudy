@@ -50,11 +50,16 @@
 
 <!-- CONTENT -->
 <div class="container">
-    <div class="row">
-        <h2 class="text-color-dark">Create a new post</h2>
+    <div class="row row-cols-auto">
+        <div class="col-1 d-none d-md-block"></div>
+        <div class="col">
+            <h2 class="text-color-dark">Create a new post</h2>
+        </div>
+        <div class="col-1 d-none d-md-block"></div>
     </div>
-    <div class="row">
-        <div class="col-12">
+    <div class="row row-cols-auto">
+        <div class="col-1 d-none d-md-block"></div>
+        <div class="col margin-bottom">
             <form method="post" id="new-post-form">
                 <label class="new-post-title-label" for="new-post-category-select">Category &nbsp;</label>
                 <select class="form-select " id="new-post-category-select" aria-label="select-category"
@@ -80,6 +85,7 @@
                 <button class="btn btn-send btn-outline-danger"><i class="fa-solid fa-ban"></i>&nbsp;Reset</button>
             </form>
         </div>
+        <div class="col-1 d-none d-md-block"></div>
     </div>
 </div>
 
