@@ -127,6 +127,13 @@ h4 {
     width: 100%;
 }
 
+.text-area-comment {
+    min-height: 100px;
+    max-height: 250px !important;
+    width: 100%;
+    margin: 0 auto;
+}
+
 /* FOOTER */
 footer {
     background-color: #FFF !important;
