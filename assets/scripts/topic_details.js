@@ -43,14 +43,9 @@ $(function () {
         success: function (result) {
             result['datas'].forEach(data => {
                 // ADD TOPIC DATAS TO TOPIC HEADER
-                $('#topic_header').append('<div class="topic-details-header">\n' +
-                    '    <h2 class="topic-details-title">' + data['title'] + '</h2>\n' +
-                    '    <span class="card-category">' + data['name'].toUpperCase() + '</span></br>\n' +
+                $('#topic-comment-list').append('<hr><div class="topic-comment">\n' +
+                    '    <span class="topic-comment-content">' + data['content'] + '</span></br>\n' +
                     '    <span class="card-release_date">' + data['release_date'] + '</span>\n' +
-                    '  </div>');
-                // ADD TOPIC CONTENT
-                $('#topic_content_div').append('<div class="topic-details-body">\n' +
-                    '    <p class="card-text">' + data['content'] + '</p>\n' +
                     '  </div>');
             })
         },
@@ -96,15 +91,9 @@ $(function () {
                 id_topic: id_topic,
                 data: getFormData(form)
             },
-            success: function (result) {
-                console.log(result);
-            },
             error: function (jqxhr) {
                 // IF COMMENT CANNOT BE SENT
                 console.log(jqxhr.responseText);
-                $('.container').append('<div>' +
-                    '<h5>The comment can\'t be send for the moment, please refresh webpage or try later.</h5>' +
-                    '<br><a href="#">Refresh webpage</a></div>');
             },
         })
     });
