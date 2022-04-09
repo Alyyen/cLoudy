@@ -41,6 +41,15 @@ $(function () {
             data: id_topic,
         },
         success: function (result) {
+            $results_number = Object.keys(result['datas']).length;
+            switch ($results_number){
+                case 1:
+                    $('#topic-comment-list').append('<hr><h5>'+ $results_number +'&nbsp;comment</h5>');
+                    break;
+                default :
+                    $('#topic-comment-list').append('<hr><h5>'+ $results_number +'&nbsp;comments</h5>');
+                    break;
+            }
             result['datas'].forEach(data => {
                 // ADD TOPIC DATAS TO TOPIC HEADER
                 $('#topic-comment-list').append('<hr><div class="topic-comment">\n' +
