@@ -59,4 +59,19 @@
 				return $result;
 			}
 		}
+
+		// GET TOPIC DATAS BY TOPIC ID
+		function get_topic_details_by_idtopic($id_topic){
+			$sql = "SELECT * FROM topic JOIN category ON topic.id_category = category.id WHERE topic.id = '$id_topic'";
+
+			$datas = $this->dbHandler->query($sql);
+			$datas->execute();
+			$result = $datas->fetchAll(PDO::FETCH_ASSOC);
+
+			if (empty($result)) {
+				return NULL;
+			} else {
+				return $result;
+			}
+		}
 	}
