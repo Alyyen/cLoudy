@@ -60,14 +60,12 @@ $(function () {
         },
         error: function (jqxhr) {
             // IF NO RESULTS ARE FOUND
-            $('.container').append('\n' +
-                '    <div class="row row-cols-auto">\n' +
+            $('#topic-comment-list').append('\n' +
                 '        <div class="col-1 d-none d-md-block"></div>\n' +
                 '        <div class="col margin-bottom" id="list-comment"><hr>\n' +
                 '            <h5>No comment found</h5><br>' +
                 '        </div>\n' +
-                '        <div class="col-1 d-none d-md-block"></div>\n' +
-                '    </div>');
+                '        <div class="col-1 d-none d-md-block"></div>\n');
         },
     })
 

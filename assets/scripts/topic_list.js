@@ -70,7 +70,7 @@ $(function () {
         },
         error: function (jqxhr) {
             // IF NO RESULTS ARE FOUND
-            $('.container').append('<div class="topic_category"><h4>Oops... There is no topic in this category yet...</h4><br><a href="../view/index.html">Back to home</a></div>');
+            $('#category_list_div').append('<div class="col topic_category margin10"><h4>Oops... There is no topic in this category yet...</h4><br><a href="../view/index.html">Back to home</a></div>');
         },
     })
 });
