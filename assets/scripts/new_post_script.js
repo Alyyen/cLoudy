@@ -25,7 +25,15 @@ $(function () {
             if ($("#new-post-title-id").val() == "") {
                 $("#error_new_post_title").append("<span class='text-danger'>Please enter a title for your post.</span>");
             }
-        } else {
+        } else if ($("#new-post-content-id").val().length > 2500 || $("#new-post-title-id").val().length > 100) {
+            if ($("#new-post-content-id").val().length > 2500) {
+                $("#error_new_post_content").append("<span class='text-danger'>Your content contains " + $("#new-post-content-id").val().length + " caracters, it must contain under 2500 caracters.</span>");
+            }
+            if ($("#new-post-title-id").val().length > 100) {
+                $("#error_new_post_title").append("<span class='text-danger'>Your title contains " + $("#new-post-title-id").val().length + " caracters, it must contain under 100 caracters.</span>");
+            }
+        }
+        else {
             // POST DATAS WHEN NO EMPTY INPUTS
             let form = $(this);
 
