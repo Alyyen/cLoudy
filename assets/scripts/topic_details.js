@@ -42,12 +42,12 @@ $(function () {
         },
         success: function (result) {
             $results_number = Object.keys(result['datas']).length;
-            switch ($results_number){
+            switch ($results_number) {
                 case 1:
-                    $('#topic-comment-list').append('<hr><h5>'+ $results_number +'&nbsp;comment</h5>');
+                    $('#topic-comment-list').append('<hr><h5>' + $results_number + '&nbsp;comment</h5>');
                     break;
                 default :
-                    $('#topic-comment-list').append('<hr><h5>'+ $results_number +'&nbsp;comments</h5>');
+                    $('#topic-comment-list').append('<hr><h5>' + $results_number + '&nbsp;comments</h5>');
                     break;
             }
             result['datas'].forEach(data => {
@@ -85,23 +85,32 @@ $(function () {
     // SEND NEW COMMENT DATAS TO DATABASE
     $("#new-comment-form").submit(function (event) {
 
+        // ERROR IF NO TITLE OR CONTENT WRITTEN
+        $("#error_new_comment_content").empty();
         event.preventDefault();
-        let form = $(this);
 
-        // POST A COMMENT
-        $.ajax({
-            type: 'post',
-            url: "../controller/topic.php",
-            dataType: 'json',
-            data: {
-                action: 'topic-new-comment',
-                id_topic: id_topic,
-                data: getFormData(form)
-            },
-            error: function (jqxhr) {
-                // IF COMMENT CANNOT BE SENT
-                console.log(jqxhr.responseText);
-            },
-        })
+        if ($("#new-comment-content-id").val() == "") {
+            $("#error_new_comment_content").append("<span class='text-danger'>Please enter a content for your comment.</span>");
+        } else {
+            // POST DATAS WHEN NO EMPTY INPUTS
+            let form = $(this);
+
+            // POST A COMMENT
+            $.ajax({
+                type: 'post',
+                url: "../controller/topic.php",
+                dataType: 'json',
+                data: {
+                    action: 'topic-new-comment',
+                    id_topic: id_topic,
+                    data: getFormData(form)
+                },
+                error: function (jqxhr) {
+                    // IF COMMENT CANNOT BE SENT
+                    console.log(jqxhr.responseText);
+                },
+            })
+        }
     });
-});
+})
+;
