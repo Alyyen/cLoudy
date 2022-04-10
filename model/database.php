@@ -47,7 +47,7 @@
 
 		// GET LAST POSTS FOR HOMEPAGE
 		function last_posts_for_homepage(){
-			$sql = "SELECT * FROM topic JOIN category ON topic.id_category = category.id ORDER BY release_date DESC LIMIT 4";
+			$sql = "SELECT * FROM topic JOIN category ON topic.id_category = category.id ORDER BY topic.id DESC LIMIT 4";
 
 			$datas = $this->dbHandler->query($sql);
 			$datas->execute();
