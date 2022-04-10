@@ -12,8 +12,10 @@
 			// REPLACE " & ' TO \" & \' IN TITLE AND CONTENT
 			$content = str_replace("'", "\'", $content);
 			$content = str_replace('"', '\"', $content);
+			$content = substr($content, 0, 2500);
 			$title = str_replace("'", "\'", $title);
 			$title = str_replace('"', '\"', $title);
+			$title = substr($title, 0, 100);
 
 			// SEND DATAS TO DATABASE
 			$new_post = $object->new_post($title, $content, $id_category);
@@ -69,6 +71,7 @@
 			// REPLACE " & ' TO \" & \' IN TITLE AND CONTENT
 			$content = str_replace("'", "\'", $content);
 			$content = str_replace('"', '\"', $content);
+			$content = substr($content, 0, 1000);
 
 			// SEND DATAS TO DATABASE
 			$new_comment = $object->new_comment_on_topic_by_id($id_topic, $content);
