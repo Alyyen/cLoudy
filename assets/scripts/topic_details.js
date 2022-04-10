@@ -91,7 +91,10 @@ $(function () {
 
         if ($("#new-comment-content-id").val() == "") {
             $("#error_new_comment_content").append("<span class='text-danger'>Please enter a content for your comment.</span>");
-        } else {
+        } else if ($("#new-comment-content-id").val().length > 1000 {
+                $("#error_new_comment_content").append("<span class='text-danger'>Your content contains " + $("#new-comment-content-id").val().length + " caracters, it must contain under 1000 caracters.</span>");
+        }
+        else {
             // POST DATAS WHEN NO EMPTY INPUTS
             let form = $(this);
 
