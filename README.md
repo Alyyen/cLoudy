@@ -14,4 +14,4 @@ This project was made by Alyssia Colomar, in 2022.
 
 ### Demo
 ![Gif to demonstrate the website](./assets/images/demo1.gif)
-![Gif to demonstrate the website](./assets/images/demo2.gif)
+![Gif to demonstrate the responsive](./assets/images/responsive-demo.gif)
